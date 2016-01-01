@@ -252,6 +252,7 @@ for_window [class="Toplevel"] floating enable
 assign [class="Skype"] 8
 assign [class="Thunderbird"] 7
 assign [class="Deluge"] 9
+assign [class="Transmission"] 9
 
 # Everything on these workspaces floats
 for_window [workspace="9"] floating enable
