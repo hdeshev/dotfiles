@@ -20,10 +20,8 @@ xset dpms 300 600 900
 
 # make sure you run xscreensaver (with splash) and configure it first
 xscreensaver -no-splash &
-
-# Composition manager. Not really into those, but it works around a Chrome redraw bug.
-# locks up i3
-#compton &
+# redshift uses warm colors
+redshift-gtk -l 42.75:23.20&
 
 if [ "$(pidof keepassx)" ]
 then
