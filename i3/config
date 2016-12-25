@@ -169,7 +169,6 @@ bindsym $mod+Shift+r mode "resize"
 
 bar {
     status_command ~/.config/i3/py3status.sh
-    tray_output primary
     position top
 }
 
