@@ -27,7 +27,7 @@ if [ "$(pidof keepassx)" ]
 then
   echo "keepassx already running"
 else
-  keepassx $HOME/.keepassx/deshev.kdb &
+  keepassx $HOME/.keepassx/deshev.kdbx &
 fi
 
 # mount ~/private
