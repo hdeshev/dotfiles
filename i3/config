@@ -214,7 +214,7 @@ mode "move" {
 bindsym $mod+d exec dmenu_run
 bindsym $mod+r exec gmrun
 
-bindsym $mod+n exec xdotool windowunmap $(xdotool getactivewindow)
+bindsym $mod+Shift+n exec xdotool windowunmap $(xdotool getactivewindow)
 bindsym XF86AudioPlay exec mocp -G
 bindsym $mod+F1 exec mocp -G
 bindsym XF86AudioMute exec amixer -D pulse set Master 1+ toggle
