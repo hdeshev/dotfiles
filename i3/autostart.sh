@@ -34,7 +34,7 @@ fi
 ~/bin/mount-private.sh &
 
 #using feh to render the wallpaper
-eval `cat $HOME/.fehbg`
+bash $HOME/.fehbg
 
 #clipboard history
 if [ "$(pidof parcellite)" ]

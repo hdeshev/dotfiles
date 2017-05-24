@@ -1,16 +1,16 @@
 #!/bin/sh
 
 # Load nvidia X settings
-nvidia-settings --load-config-only
+# nvidia-settings --load-config-only
 
 # Gnome keyring daemon
-gnome-keyring-daemon --daemonize --login &
+# gnome-keyring-daemon --daemonize --login &
 
 # Start dropbox daemon
 # ~/.dropbox-dist/dropboxd &
 
 # Start the pCloud Sync
-psyncgui &
+# psyncgui &
 
 #VNC server - remote pair programming
 # if [ "$(pidof vino-server)" ]
