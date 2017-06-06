@@ -1,37 +1,35 @@
 #!/bin/bash
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
+if_installed() {
+    which $1 > /dev/null && \
+        eval $@
+}
 # source ~/.bashfiles/gnome-keyring.sh
 
-# remap caps lock to ctrl
-setxkbmap -option ctrl:nocaps
-# right Win key is my Compose key
-setxkbmap -option compose:rwin
-# us & bg phonetic layout. right alt switches, caps lock lights up when bg toggled
-setxkbmap us,bg ,phonetic grp:toggle,grp_led:caps
-
-# increase "mouse" speed and acceleration
-# Mouse-optimized
-# xset m 4 1
-# Trackball-optimized
-xset m 8 1
+$SCRIPT_DIR/input-devices.sh
 
 ## DPMS monitor setting (standby -> suspend -> off) (seconds)
-xset dpms 300 600 900
+# xset dpms 300 600 900
 
-# make sure you run xscreensaver (with splash) and configure it first
+# make sure you run xscreensaver (with splash) and configure locking and power management first
 xscreensaver -no-splash &
-# redshift uses warm colors
-redshift-gtk -l 42.75:23.20&
 
-if [ "$(pidof keepassx)" ]
-then
+# redshift uses warm colors
+if [ "$(pidof redshift)" ] ; then
+    echo "redshift already running"
+else
+    if_installed redshift-gtk -l 42.75:23.20&
+fi
+
+if [ "$(pidof keepassx)" ] ; then
   echo "keepassx already running"
 else
   keepassx $HOME/.keepassx/deshev.kdbx &
 fi
 
 # mount ~/private
-~/bin/mount-private.sh &
+if_installed ~/bin/mount-private.sh &
 
 #using feh to render the wallpaper
 bash $HOME/.fehbg
@@ -68,6 +66,8 @@ else
   nm-applet &
 fi
 
+# Lid close, suspends, etc
+xfce4-power-manager
+
 HOST=$(hostname)
-SCRIPT_DIR=$(dirname $(readlink -f "$0"))
 source $SCRIPT_DIR/hosts/$HOST.sh

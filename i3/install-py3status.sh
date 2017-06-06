@@ -9,5 +9,5 @@ pip() {
     $VENV/bin/pip $@
 }
 
-pip install py3status==2.6
+pip install py3status==3.5
 pip install i3-py==0.6.4

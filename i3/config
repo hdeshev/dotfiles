@@ -213,6 +213,7 @@ mode "move" {
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
 bindsym $mod+r exec gmrun
+bindsym $mod+Control+l exec xscreensaver-command -lock
 
 bindsym $mod+Shift+n exec xdotool windowunmap $(xdotool getactivewindow)
 bindsym XF86AudioPlay exec mocp -G
@@ -230,7 +231,7 @@ bindsym $mod+F9 exec brightness up
 bindsym $mod+e exec pcmanfm
 
 # screengrabbing
-bindsym $mod+i exec ~/bin/shoot
+bindsym $mod+i exec ~/.bin/shoot
 
 
 # App-specific config
@@ -250,11 +251,15 @@ for_window [class="Pcmanfm"] floating enable
 for_window [class="Toplevel"] floating enable
 
 assign [class="Skype"] 8
+assign [class="Pidgin"] 8
+assign [class="Viber"] 8
 assign [class="Thunderbird"] 7
+assign [class="Slack"] 7
+assign [class="zoom"] 9
 assign [class="Deluge"] 9
 assign [class="Transmission"] 9
 
 # Everything on these workspaces floats
 for_window [workspace="9"] floating enable
 
-exec ~/.config/i3/autostart.sh
+exec --no-startup-id ~/.config/i3/autostart.sh
