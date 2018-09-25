@@ -168,6 +168,7 @@ mode "resize" {
 bindsym $mod+Shift+r mode "resize"
 
 bar {
+    mode hide
     status_command ~/.config/i3/py3status.sh
     position top
 }
@@ -212,7 +213,8 @@ mode "move" {
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
-bindsym $mod+r exec gmrun
+# bindsym $mod+r exec gmrun
+bindsym $mod+r exec rofi -show run
 bindsym $mod+Control+l exec xscreensaver-command -lock
 
 bindsym $mod+Shift+n exec xdotool windowunmap $(xdotool getactivewindow)
