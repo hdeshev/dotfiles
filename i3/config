@@ -214,7 +214,7 @@ mode "move" {
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
 # bindsym $mod+r exec gmrun
-bindsym $mod+r exec PATH=~/.bin:$PATH rofi -show run
+bindsym $mod+r exec ~/.bin/rofi-nix -show run
 bindsym $mod+Control+l exec xscreensaver-command -lock
 
 bindsym $mod+Shift+n exec xdotool windowunmap $(xdotool getactivewindow)
