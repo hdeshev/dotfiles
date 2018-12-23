@@ -233,7 +233,7 @@ bindsym $mod+F9 exec brightness up
 bindsym $mod+e exec pcmanfm
 
 # screengrabbing
-bindsym $mod+i exec ~/.bin/shoot
+bindsym $mod+i exec ~/.nix-profile/bin/shoot
 
 
 # App-specific config
