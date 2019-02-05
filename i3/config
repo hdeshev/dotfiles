@@ -230,7 +230,7 @@ bindsym $mod+F4 exec amixer -D pulse set Master 5%+
 bindsym $mod+F8 exec brightness down
 bindsym $mod+F9 exec brightness up
 
-bindsym $mod+e exec pcmanfm
+bindsym $mod+e exec ~/.bin/explorer
 
 # screengrabbing
 bindsym $mod+i exec ~/.nix-profile/bin/shoot
@@ -252,6 +252,9 @@ for_window [class="Thunar"] floating enable
 for_window [class="Pcmanfm"] floating enable
 for_window [class="Toplevel"] floating enable
 
+assign [class="Firefox"] B
+assign [class="Google-chrome"] B
+assign [class="Chromium"] B
 assign [class="Skype"] 8
 assign [class="Pidgin"] 8
 assign [class="Viber"] 8
