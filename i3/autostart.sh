@@ -58,6 +58,9 @@ fi
 # Start the XFCE settings daemon to make GUI programs look good
 xfsettingsd --replace
 
+killall gcalcli-remind
+gcalcli-remind &
+
 # Network Manager applet - connect to various networks (eth, wlan)
 if [ "$(pidof nm-applet)" ]
 then
