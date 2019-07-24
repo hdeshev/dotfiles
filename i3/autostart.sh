@@ -22,15 +22,6 @@ else
     if_installed redshift-gtk -l 42.75:23.20&
 fi
 
-if [ "$(pidof keepassx)" ] ; then
-  echo "keepassx already running"
-else
-  keepassx $HOME/.keepassx/deshev.kdbx &
-fi
-
-# mount ~/private
-if_installed ~/bin/mount-private.sh &
-
 #using feh to render the wallpaper
 bash $HOME/.fehbg
 
