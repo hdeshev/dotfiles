@@ -169,7 +169,7 @@ bindsym $mod+Shift+r mode "resize"
 
 bar {
     mode hide
-    status_command ~/.config/i3/py3status.sh
+    status_command ~/.nix-profile/bin/py3status
     position top
 }
 
